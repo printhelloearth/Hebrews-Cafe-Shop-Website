@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Hebrew Café — Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/shop.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-page">
+    <header class="admin-header">
+        <a class="admin-brand" href="index.html">HEBREW <span>ADMIN</span></a>
+        <div class="admin-session" id="sessionBar" hidden>
+            <span id="staffLabel"></span>
+            <button class="admin-button admin-button-outline" id="signOutButton" type="button">Sign out</button>
+        </div>
+    </header>
+
+    <main class="admin-main">
+        <section class="admin-login admin-card" id="loginPanel">
+            <h1>Staff sign in</h1>
+            <p>Use your café staff account to manage the menu and order queue.</p>
+            <form id="loginForm" class="admin-form admin-login-form">
+                <label class="form-wide">Email
+                    <input name="email" type="email" autocomplete="username" required>
+                </label>
+                <label class="form-wide">Password
+                    <input name="password" type="password" autocomplete="current-password" required>
+                </label>
+                <button class="admin-button form-wide" id="loginButton" type="submit">Sign in</button>
+            </form>
+            <p class="admin-message" id="loginMessage" role="status" aria-live="polite"></p>
+        </section>
+
+        <div id="dashboard" hidden>
+            <div class="admin-heading">
+                <div>
+                    <h1>Shop dashboard</h1>
+                    <p>Menu, orders, and sales at a glance.</p>
+                </div>
+                <button class="admin-button admin-button-outline" id="refreshButton" type="button">Refresh</button>
+            </div>
+
+            <section class="metric-grid" aria-label="Sales totals">
+                <article class="metric-card"><span>Paid today</span><strong id="salesToday">₱0.00</strong></article>
+                <article class="metric-card"><span>Paid this week</span><strong id="salesWeek">₱0.00</strong></article>
+                <article class="metric-card"><span>Paid this month</span><strong id="salesMonth">₱0.00</strong></article>
+                <article class="metric-card"><span>Paid orders today</span><strong id="ordersToday">0</strong></article>
+            </section>
+
+            <section class="admin-card chart-grid" aria-label="Sales breakdown">
+                <div>
+                    <h2>Best sellers this month</h2>
+                    <div class="bar-list" id="bestSellers"></div>
+                </div>
+                <div>
+                    <h2>Sales by category this month</h2>
+                    <div class="bar-list" id="categorySales"></div>
+                </div>
+                <div>
+                    <h2>Peak order hours this month</h2>
+                    <div class="bar-list" id="peakHours"></div>
+                </div>
+            </section>
+
+            <section class="admin-card" aria-labelledby="ordersHeading">
+                <div class="section-heading">
+                    <div>
+                        <h2 id="ordersHeading">Live order queue</h2>
+                        <p>Shows the latest 100 orders; refreshes every 20 seconds. Record cash as paid when collected.</p>
+                    </div>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr><th>Order</th><th>Customer</th><th>Items</th><th>Total</th><th>Type / time</th><th>Payment</th><th>Status</th></tr>
+                        </thead>
+                        <tbody id="ordersTable">
+                            <tr><td colspan="7">Loading orders…</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="admin-card" aria-labelledby="categoryHeading">
+                <div class="section-heading">
+                    <div>
+                        <h2 id="categoryHeading">Menu categories</h2>
+                        <p>Change sort order to reposition categories on the customer menu.</p>
+                    </div>
+                </div>
+                <form class="admin-form" id="categoryForm">
+                    <input name="id" type="hidden">
+                    <label>Name<input name="name" maxlength="80" required></label>
+                    <label>Slug<input name="slug" maxlength="80" pattern="[a-z0-9-]+" required></label>
+                    <label>Icon / emoji<input name="icon" maxlength="12"></label>
+                    <label>Sort order<input name="sort_order" type="number" step="1" value="0" required></label>
+                    <label class="checkbox-label"><input name="is_active" type="checkbox" checked> Visible on menu</label>
+                    <div class="form-actions form-wide">
+                        <button class="admin-button" type="submit">Save category</button>
+                        <button class="admin-button admin-button-outline" id="cancelCategoryEdit" type="button" hidden>Cancel edit</button>
+                    </div>
+                </form>
+                <p class="admin-message" id="categoryMessage" role="status"></p>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Category</th><th>Slug</th><th>Sort</th><th>Visible</th><th>Actions</th></tr></thead>
+                        <tbody id="categoriesTable"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="admin-card" aria-labelledby="itemHeading">
+                <div class="section-heading">
+                    <div>
+                        <h2 id="itemHeading">Menu items</h2>
+                        <p>Add, update, reorder, hide, or mark items sold out.</p>
+                    </div>
+                </div>
+                <form class="admin-form" id="itemForm">
+                    <input name="id" type="hidden">
+                    <label>Name<input name="name" maxlength="120" required></label>
+                    <label>Category<select name="category_id" required></select></label>
+                    <label>Price (PHP)<input name="price" type="number" min="0" step="0.01" required></label>
+                    <label>Sort order<input name="sort_order" type="number" step="1" value="0" required></label>
+                    <label class="form-wide">Description<textarea name="description" rows="2" maxlength="500"></textarea></label>
+                    <label class="form-wide">Photo URL (optional)<input name="image_url" type="url" maxlength="1000"></label>
+                    <label class="form-wide">Upload photo<input name="photo" type="file" accept="image/*"></label>
+                    <label class="checkbox-label"><input name="is_available" type="checkbox" checked> Available for sale</label>
+                    <label class="checkbox-label"><input name="is_active" type="checkbox" checked> Visible on menu</label>
+                    <div class="form-actions form-wide">
+                        <button class="admin-button" id="saveItemButton" type="submit">Save item</button>
+                        <button class="admin-button admin-button-outline" id="cancelItemEdit" type="button" hidden>Cancel edit</button>
+                    </div>
+                </form>
+                <p class="admin-message" id="itemMessage" role="status"></p>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Item</th><th>Category</th><th>Price</th><th>Sort</th><th>Availability</th><th>Actions</th></tr></thead>
+                        <tbody id="itemsTable"></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script type="module" src="js/admin.js"></script>
+</body>
+</html>

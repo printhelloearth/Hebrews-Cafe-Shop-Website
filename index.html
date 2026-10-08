@@ -120,6 +120,21 @@
             color: var(--primary-dark);
         }
 
+        .nav-links .nav-admin {
+            padding: 9px 14px;
+            border: 1px solid var(--accent-gold);
+            border-radius: 7px;
+            color: var(--white);
+        }
+
+        .nav-links .nav-admin::after {
+            display: none;
+        }
+
+        .navbar.scrolled .nav-links .nav-admin {
+            color: var(--primary-dark);
+        }
+
         .hamburger {
             display: none;
             flex-direction: column;
@@ -568,6 +583,11 @@
             letter-spacing: 2px;
         }
 
+        .mobile-menu a.nav-admin {
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
         .mobile-overlay {
             display: none;
             position: fixed;
@@ -674,6 +694,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#menu">Menu</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a class="nav-admin" href="admin.html">Admin Login</a></li>
                 </ul>
                 <div class="hamburger" id="hamburger">
                     <span></span>
@@ -692,6 +713,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#menu">Menu</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a class="nav-admin" href="admin.html">Admin Login</a></li>
         </ul>
     </div>
 
