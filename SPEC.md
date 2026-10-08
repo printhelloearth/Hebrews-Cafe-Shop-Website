@@ -1,6 +1,6 @@
-# Hebrew Coffee Shop Website Specification
+ Hebrew Coffee Shop Website Specification
 
-## 1. Project Overview
+1. Project Overview
 
 - **Project Name**: Hebrew Coffee Shop Website
 - **Type**: Single-page responsive website
@@ -9,11 +9,11 @@
 
 ---
 
-## 2. UI/UX Specification
+2. UI/UX Specification
 
-### Layout Structure
+Layout Structure
 
-**Page Sections (in order):**
+Page Sections (in order):
 1. Navigation Bar (sticky)
 2. Hero Section
 3. About Section
@@ -22,12 +22,12 @@
 6. Contact Section
 7. Footer
 
-**Responsive Breakpoints:**
+Responsive Breakpoints:
 - Mobile: < 768px
 - Tablet: 768px - 1024px
 - Desktop: > 1024px
 
-### Visual Design
+ Visual Design
 
 **Color Palette:**
 - Primary Dark Brown: `#3E2723`
@@ -40,7 +40,7 @@
 - White: `#FFFFFF`
 - Accent Coral: `#A1887F`
 
-**Typography:**
+Typography:
 - Headings: "Playfair Display", serif (elegant, premium feel)
 - Body: "Lato", sans-serif (clean, readable)
 - Logo/Brand: "Playfair Display", serif
@@ -51,19 +51,19 @@
   - Body: 1rem
   - Small: 0.875rem
 
-**Spacing System:**
+Spacing System:
 - Section Padding: 80px vertical (desktop), 50px (mobile)
 - Container Max Width: 1200px
 - Grid Gap: 30px
 - Card Padding: 25px
 
-**Visual Effects:**
+Visual Effects:
 - Box shadows: `0 4px 20px rgba(62, 39, 35, 0.1)`
 - Border radius: 12px for cards, 8px for buttons
 - Smooth transitions: 0.3s ease for all interactive elements
 - Subtle hover lift effect on cards
 
-### Components
+Components
 
 **Navigation Bar:**
 - Fixed/sticky at top
@@ -106,9 +106,9 @@
 
 ---
 
-## 3. Functionality Specification
+3. Functionality Specification
 
-### Core Features
+Core Features
 
 1. **Smooth Scrolling**: Clicking nav links scrolls smoothly to sections
 2. **Sticky Navigation**: Nav stays visible on scroll with background change
@@ -117,14 +117,14 @@
 5. **Interactive Elements**: Hover effects on buttons and cards
 6. **Mobile Menu**: Toggle hamburger menu on mobile
 
-### User Interactions
+User Interactions
 
 - Nav link click → smooth scroll to section
 - CTA button click → scroll to contact section
 - Mobile menu toggle → slide-in menu
 - Menu item hover → subtle lift effect
 
-### Animations
+Animations
 
 - Fade-in on scroll for sections
 - Button hover: scale + color change
@@ -133,9 +133,9 @@
 
 ---
 
-## 4. Acceptance Criteria
+4. Acceptance Criteria
 
-### Visual Checkpoints
+Visual Checkpoints
 - [ ] Hero displays "Hebrew" with "Brewed with Purpose" tagline
 - [ ] Color scheme uses brown, cream, beige earthy tones
 - [ ] Typography is elegant (Playfair Display for headings)
@@ -145,7 +145,7 @@
 - [ ] Smooth scrolling works
 - [ ] Mobile hamburger menu functions
 
-### Content Checkpoints
+Content Checkpoints
 - [ ] All menu items from spec are included
 - [ ] About section mentions quality, community, relaxing vibe
 - [ ] Contact section has location, phone, social icons
@@ -153,9 +153,9 @@
 
 ---
 
-## 5. Menu Data
+5. Menu Data
 
-### ☕ Coffee (8 items)
+☕ Coffee (8 items)
 - Espresso — ₱70
 - Americano — ₱90
 - Cappuccino — ₱110
@@ -165,35 +165,35 @@
 - Macchiato — ₱110
 - Cortado — ₱110
 
-### 🧊 Iced Coffee (5 items)
+🧊 Iced Coffee (5 items)
 - Iced Americano — ₱100
 - Iced Latte — ₱130
 - Iced Mocha — ₱140
 - Cold Brew — ₱150
 - Iced Caramel Macchiato — ₱150
 
-### 🍫 Non-Coffee Drinks (5 items)
+🍫 Non-Coffee Drinks (5 items)
 - Hot Chocolate — ₱110
 - Matcha Latte — ₱130
 - Chai Latte — ₱120
 - Milk Tea — ₱120
 - Vanilla Steamer — ₱100
 
-### 🥤 Blended / Frappes (5 items)
+🥤 Blended / Frappes (5 items)
 - Coffee Frappe — ₱140
 - Mocha Frappe — ₱150
 - Caramel Frappe — ₱150
 - Java Chip Frappe — ₱160
 - Matcha Frappe — ₱150
 
-### 🍵 Tea (5 items)
+🍵 Tea (5 items)
 - Green Tea — ₱80
 - Black Tea — ₱80
 - Herbal Tea — ₱90
 - Chamomile Tea — ₱90
 - Peppermint Tea — ₱90
 
-### 🥐 Pastries (6 items)
+🥐 Pastries (6 items)
 - Croissant — ₱90
 - Chocolate Croissant — ₱110
 - Muffins — ₱80
@@ -201,21 +201,21 @@
 - Cinnamon Roll — ₱110
 - Banana Bread — ₱90
 
-### 🍞 Sandwiches & Light Meals (5 items)
+🍞 Sandwiches & Light Meals (5 items)
 - Ham & Cheese Sandwich — ₱130
 - Tuna Sandwich — ₱140
 - Chicken Sandwich — ₱150
 - Grilled Cheese — ₱120
 - Clubhouse Sandwich — ₱180
 
-### 🍰 Desserts (5 items)
+🍰 Desserts (5 items)
 - Cheesecake — ₱140
 - Chocolate Cake — ₱130
 - Brownies — ₱90
 - Cookies — ₱60
 - Tiramisu — ₱150
 
-### 🧃 Extras (4 items)
+🧃 Extras (4 items)
 - Extra Shot of Espresso — ₱30
 - Flavored Syrups — ₱20
 - Whipped Cream — ₱20
