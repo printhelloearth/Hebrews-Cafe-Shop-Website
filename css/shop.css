@@ -1,4 +1,4 @@
-.admin-page [hidden],
+.admin-page [hidden], 
 body [hidden] {
     display: none !important;
 }
