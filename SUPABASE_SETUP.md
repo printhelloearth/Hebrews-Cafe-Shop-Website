@@ -1,6 +1,5 @@
 # Supabase setup
 
-This first online version uses Supabase for menu data, staff authentication, photo storage, customer orders, order tracking, and the staff dashboard. The browser key is the **public anon/publishable key**, not a service-role key.
 
 ## 1. Create and initialize the project
 
