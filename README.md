@@ -41,9 +41,6 @@ This static website is deployed on Netlify. To publish changes, connect the GitH
 
 ---Local Preview---
 
-Deploy the complete site folder so `admin.html`, `css/`, `js/`, and `supabase/` are included with `index.html`. After deployment, the customer site is served at the Netlify site URL and the staff dashboard is available at `/admin.html` on that same domain.
-
-Set the deployed HTTPS URL as the Supabase Authentication Site URL and add it to the allowed redirect URLs. Review the [Supabase setup guide](./SUPABASE_SETUP.md) before accepting public orders.
 
 
 
