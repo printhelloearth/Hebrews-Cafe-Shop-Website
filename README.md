@@ -1,6 +1,8 @@
 Hebrew Café Website
 
-Hebrew Café is a responsive coffee shop website with a Supabase-backed menu, customer ordering, and a staff dashboard. The app is deployed on Netlify.
+Hebrew Café is a responsive coffee shop website with a Supabase-backed menu, customer ordering, and a staff dashboard. The app is deployed on Netlify. 
+
+Check out my website here: https://hebrews-cafe.netlify.app/
 
 
 1. Pages
